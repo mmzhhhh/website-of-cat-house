@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>咖啡信息</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="js/jquery-1.11.1.min.js"></script>
+</head>
+
+<body class="min-h-screen bg-slate-50 font-noto">
+    <!-- <script src="js/click.js"></script> -->
+    <!-- Top bar & Top name -->
+    <header class="bg-yellow-800 text-white sticky top-0 z-10 ">
+        <section class="max-w-4xl mx-auto p-4 flex justify-between items-center">
+            <h1 class="text-4xl font-medium">
+                猫 咖 管 理 系 统
+            </h1>
+
+        </section>
+    </header>
+
+    <!-- selection bar -->
+    <nav class="flex justify-center items-center text-center text-4xl p-6">
+        <a href="systemPage.html" class="flex-1 duration-300 hover:text-white hover:bg-cyan-600 rounded-xl mr-2">首页</a>
+        <a href="coffeeInformation.html" class="flex-1 duration-300 hover:text-white hover:bg-cyan-600 rounded-xl mr-2">咖啡信息</a>
+        <a href="catInformation.html" class="flex-1 duration-300 hover:text-white hover:bg-cyan-600 rounded-xl mr-2">猫咪信息</a>
+        <a href="messageBorad.html" class="flex-1 duration-300 hover:text-white hover:bg-cyan-600 rounded-xl mr-2">留言板</a>
+        <a href="shopCar.html" class="flex-1 duration-300 hover:text-white hover:bg-cyan-600 rounded-xl bg-cyan-600">购物车</a>
+    </nav>
+
+    <main class="flex mx-20 gap-10 justify-between my-5">
+        <div class="flex-1">
+            <h1 class="text-center text-2xl">摩卡 : 25￥</h1>
+                <img src="./img/pexels-jose-espinal-373059-1006297.jpg" alt="cat-1"
+                    class="rounded-3xl shadow-2xl hover:transform transition ease-in-out duration-500 hover:scale-110 cursor-pointer">
+            <div class="text-center my-4">
+                <input type="number" value="0" class="w-1/2 text-center bg-slate-300 rounded-3xl" min="0" max="20" id="moka">
+            </div>
+        </div>
+        <div class="flex-1">
+            <h1 class="text-center text-2xl">美式 : 18￥</h1>
+                <img src="./img/pexels-andrew-4264049.jpg" alt="cat-2"
+                    class="rounded-3xl shadow-2xl hover:transform transition ease-in-out duration-500 hover:scale-110 cursor-pointer">
+            <div class="text-center my-4">
+                <input type="number" value="0" class="w-1/2 text-center bg-slate-300 rounded-3xl" min="0" max="20" id="meishi">
+            </div>
+        </div>
+        <div class="flex-1">
+            <h1 class="text-center text-2xl">卡布奇诺 : 22￥</h1>
+                <img src="./img/pexels-brigitte-tohm-36757-377903.jpg" alt="cat-3"
+                    class="rounded-3xl shadow-2xl hover:transform transition ease-in-out duration-500 hover:scale-110 cursor-pointer">
+            <div class="text-center my-4">
+                <input type="number" value="0" class="w-1/2 text-center bg-slate-300 rounded-3xl" min="0" max="20" id="kabu">
+            </div>
+        </div>
+        <div class="flex-1">
+            <h1 class="text-center text-2xl">牛角包 : 30￥ </h1>
+                <img src="./img/pexels-gonzalo-mendiola-95842233-24706518.jpg" alt="cat-1"
+                    class="rounded-3xl shadow-2xl hover:transform transition ease-in-out duration-500 hover:scale-110 cursor-pointer">
+            <div class="text-center my-4">
+                <input type="number" value="0" class="w-1/2 text-center bg-slate-300 rounded-3xl" min="0" max="20" id="niujiao">
+            </div>
+        </div>
+        <div class="flex-1">
+            <h1 class="text-center text-2xl">意式浓缩 : 20￥</h1>
+                <img src="./img/pexels-karolina-grabowska-4195612.jpg" alt="cat-1"
+                    class="rounded-3xl shadow-2xl hover:transform transition ease-in-out duration-500 hover:scale-110 cursor-pointer">
+            <div class="text-center my-4">
+                <input type="number" value="0" class="w-1/2 text-center bg-slate-300 rounded-3xl" min="0" max="20" id="yishi">
+            </div>
+        </div>
+        <div class="flex-1">
+            <h1 class="text-center text-2xl">拿铁 : 18￥</h1>
+                <img src="./img/pexels-fariphotography-1254655.jpg" alt="cat-1"
+                    class="rounded-3xl shadow-2xl hover:transform transition ease-in-out duration-500 hover:scale-110 cursor-pointer">
+            <div class="text-center my-4">
+                <input type="number" value="0" class="w-1/2 text-center bg-slate-300 rounded-3xl" min="0" max="20" id="natie">
+            </div>
+        </div>
+    </main>
+    <div class="flex items-center justify-center gap-10 my-3">
+        <button id="buy" class="bg-slate-400 p-2 rounded-3xl hover:bg-slate-600 duration-300 hover:text-white">立即下单</button>
+        <h1>当前价格：<span id="price">0元</span></h1>
+    </div>
+   
+
+
+    <footer class="bg-yellow-800 absolute bottom-0 w-full text-white text-center">
+        <p class="hover:underline cursor-pointer">Copyright &copy; <span id="year">2024</span></p>
+        <p class="hover:underline cursor-pointer">All Rights Reserved</p>
+        <p class="hover:underline cursor-pointer">Phone Call:18688888888</p>
+        <p class="hover:underline cursor-pointer">Email:M123456789@gmail.com</p>
+    </footer>
+</body>
+<script>
+    $(function () {
+        const price=$('#price');
+        $("input").on('input',()=>{
+            const moka=$('#moka').val()*25;
+            const meishi=$('#meishi').val()*18;
+            const kabu=$('#kabu').val()*22;
+            const niujiao=$('#niujiao').val()*30;
+            const yishi=$('#yishi').val()*20;
+            const natie=$('#natie').val()*18;
+            const allPrice=moka+meishi+kabu+niujiao+yishi+natie;
+
+            price.text(allPrice+"元");
+        })
+        
+        $('#buy').on('click',()=>{
+            const moka=$('#moka').val()*25;
+            const meishi=$('#meishi').val()*18;
+            const kabu=$('#kabu').val()*22;
+            const niujiao=$('#niujiao').val()*30;
+            const yishi=$('#yishi').val()*20;
+            const natie=$('#natie').val()*18;
+            const allPrice=moka+meishi+kabu+niujiao+yishi+natie;
+            alert("购买成功，一共: "+allPrice+"元");
+            location.reload();
+        })
+     })
+</script>
+</html>

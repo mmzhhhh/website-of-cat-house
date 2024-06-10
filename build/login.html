@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="js/jquery-1.11.1.min.js"></script>
+</head>
+
+<body class="max-h-screen font-zcool bg-gray-300">
+    <!-- login -->
+    <section class="bg-slate-50 w-2/3 mx-auto text-4xl p-6 mt-20 rounded-3xl">
+        <!-- topBar -->
+        <div class="flex items-center justify-center">
+            <i class="fa-solid fa-cat"></i><i class="fa-solid fa-house "></i> Login
+        </div>
+        <!-- line -->
+        <hr class="mx-auto bg-black w-1/2 my-3">
+        <!-- login -->
+        <div>
+            <form action="" id="loginForm">
+                <label for="">
+                    <i class="fa-solid fa-user mb-4"></i> :
+                </label>
+                <input type="text" class="rounded-xl w-full p-2 border border-solid mb-4 border-slate-900" required
+                    id="email" name="email" placeholder="Account...">
+                <label for="">
+                    <i class="fa-solid fa-lock mb-4"></i> :
+                </label>
+                <input type="password" class="rounded-xl w-full p-2 border border-solid mb-4 border-slate-900" required
+                    id="password" name="password" placeholder="Password...">
+                <button type="submit" class="hover:text-cyan-500 duration-300 hover:underline">submit</button>
+
+                <a href="signup.html" class="hover:text-cyan-500 duration-300 hover:underline float-right">Sign up</a>
+            </form>
+        </div>
+    </section>
+</body>
+<script>
+    $(function () {
+        //从localStorage获取邮箱和密码
+        const storedEmail = localStorage.getItem('email');
+        const storedPwd = localStorage.getItem('pwd');
+
+        //引用用户输入的值
+        const emailInput = $('#email');
+        const pwdInput = $('#password');
+
+        //登录提交事件
+        $('#loginForm').on('submit', function (event) {
+            event.preventDefault();
+            // 验证输入值和注册值
+            if (emailInput.val() === storedEmail && pwdInput.val() === storedPwd) {
+                alert('登录成功');
+                window.location.href = './systemPage.html';
+            } else {
+                alert('用户名或密码不正确');
+            }
+        })
+    })
+</script>
+
+</html>

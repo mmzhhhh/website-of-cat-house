@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/changeBanner.js"></script>
+</head>
+
+<body class="min-h-screen bg-slate-50 font-noto">
+    <script src="js/click.js"></script>
+    <!-- Top bar & Top name -->
+    <header class="bg-yellow-800 text-white sticky top-0 z-10 ">
+        <section class="max-w-4xl mx-auto p-4 flex justify-between items-center">
+            <h1 class="text-4xl font-medium">
+                猫 咖 管 理 系 统
+            </h1>
+        </section>
+    </header>
+
+     <!-- selection bar -->
+     <nav class="flex justify-center items-center text-center text-4xl p-6">
+        <a href="systemPage.html" class="flex-1 duration-300 hover:text-white hover:bg-cyan-600 bg-cyan-600 rounded-xl mr-2">首页</a>
+        <a href="coffeeInformation.html" class="flex-1 duration-300 hover:text-white hover:bg-cyan-600 rounded-xl mr-2">咖啡信息</a>
+        <a href="catInformation.html" class="flex-1 duration-300 hover:text-white rounded-xl mr-2">猫咪信息</a>
+        <a href="messageBorad.html" class="flex-1 duration-300 hover:text-white hover:bg-cyan-600 rounded-xl mr-2">留言板</a>
+        <a href="shopCar.html" class="flex-1 duration-300 hover:text-white hover:bg-cyan-600 rounded-xl">购物车</a>
+    </nav>
+
+    <!-- line -->
+    <hr class="mx-auto bg-black w-1/2 my-3">
+
+    <!-- banner -->
+
+    <main class="w-1/2 h-1/2 mx-auto relative cursor-pointer">
+        <ul class="banner">
+            <li>
+                <img src="img/cat-1.jpg" class="rounded-3xl shadow-2xl top-0 left-0 absolute transform transition duration-500 ease-in-out hover:scale-110 hover:shadow-lg " alt="cat-1">
+            </li>
+            <li class="hidden">
+                <img src="img/cat-2.jpg" class="rounded-3xl shadow-2xl top-0 left-0 absolute transform transition duration-500 ease-in-out hover:scale-110 hover:shadow-lg " alt="cat-2">
+            </li>
+            <li class="hidden">
+                <img src="img/cat-3.jpg" class="rounded-3xl shadow-2xl top-0 left-0 absolute transform transition duration-500 ease-in-out hover:scale-110 hover:shadow-lg " alt="cat-3">
+            </li>
+            <li class="hidden">
+                <img src="img/cat-4.jpg" class="rounded-3xl shadow-2xl top-0 left-0 absolute transform transition duration-500 ease-in-out hover:scale-110 hover:shadow-lg " alt="cat-4">
+            </li>
+            <li class="hidden">
+                <img src="img/cat-5.jpg" class="rounded-3xl shadow-2xl top-0 left-0 absolute transform transition duration-500 ease-in-out hover:scale-110 hover:shadow-lg " alt="cat-5">
+            </li>
+        </ul>
+        <button class="absolute left-0 top-56 transform -translate-y-1/2 bt-left">
+            <i class="fa-solid fa-left-long text-5xl text-white hover:text-8xl duration-300"></i>
+        </button>
+        <button class="absolute right-0 top-56 transform -translate-y-1/2 bt-right">
+            <i class="fa-solid fa-right-long text-5xl text-white hover:text-8xl duration-300"></i>
+        </button>
+    </main>
+
+
+
+    <footer class="bg-yellow-800 absolute bottom-0 w-full text-white text-center">
+        <p class="hover:underline cursor-pointer">Copyright &copy; <span id="year">2024</span></p>
+        <p class="hover:underline cursor-pointer">All Rights Reserved</p>
+        <p class="hover:underline cursor-pointer">Phone Call:18688888888</p>
+        <p class="hover:underline cursor-pointer">Email:M123456789@gmail.com</p>
+    </footer>
+</body>
+
+
+
+</html>

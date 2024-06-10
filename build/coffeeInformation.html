@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>咖啡信息</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="js/jquery-1.11.1.min.js"></script>
+</head>
+
+<body class="min-h-screen bg-slate-50 font-noto">
+    <script src="js/click.js"></script>
+    <!-- Top bar & Top name -->
+    <header class="bg-yellow-800 text-white sticky top-0 z-10 ">
+        <section class="max-w-4xl mx-auto p-4 flex justify-between items-center">
+            <h1 class="text-4xl font-medium">
+                猫 咖 管 理 系 统
+            </h1>
+
+        </section>
+    </header>
+
+    <!-- selection bar -->
+    <nav class="flex justify-center items-center text-center text-4xl p-6">
+        <a href="systemPage.html" class="flex-1 duration-300 hover:text-white hover:bg-cyan-600 rounded-xl mr-2">首页</a>
+        <a href="coffeeInformation.html" class="flex-1 duration-300 hover:text-white hover:bg-cyan-600 rounded-xl mr-2 bg-cyan-600">咖啡信息</a>
+        <a href="catInformation.html" class="flex-1 duration-300 hover:text-white rounded-xl mr-2">猫咪信息</a>
+        <a href="messageBorad.html" class="flex-1 duration-300 hover:text-white hover:bg-cyan-600 rounded-xl mr-2">留言板</a>
+        <a href="shopCar.html" class="flex-1 duration-300 hover:text-white hover:bg-cyan-600 rounded-xl">购物车</a>
+    </nav>
+
+
+    <main class="flex mx-20 gap-10 justify-between my-5">
+        <div class="flex-1">
+            <h1 class="text-center text-2xl">摩卡 : 25￥</h1>
+            <a href="shopCar.html">
+                <img src="./img/pexels-jose-espinal-373059-1006297.jpg" alt="cat-1"
+                    class="rounded-3xl shadow-2xl hover:transform transition ease-in-out duration-500 hover:scale-110 cursor-pointer">
+            </a>
+        </div>
+        <div class="flex-1">
+            <h1 class="text-center text-2xl">美式 : 18￥</h1>
+            <a href="shopCar.html">
+                <img src="./img/pexels-andrew-4264049.jpg" alt="cat-2"
+                    class="rounded-3xl shadow-2xl hover:transform transition ease-in-out duration-500 hover:scale-110 cursor-pointer">
+            </a>
+        </div>
+        <div class="flex-1">
+            <h1 class="text-center text-2xl">卡布奇诺 : 22￥</h1>
+            <a href="shopCar.html">
+                <img src="./img/pexels-brigitte-tohm-36757-377903.jpg" alt="cat-3"
+                    class="rounded-3xl shadow-2xl hover:transform transition ease-in-out duration-500 hover:scale-110 cursor-pointer">
+            </a>
+        </div>
+        <div class="flex-1">
+            <h1 class="text-center text-2xl">牛角包 : 30￥ </h1>
+            <a href="shopCar.html">
+                <img src="./img/pexels-gonzalo-mendiola-95842233-24706518.jpg" alt="cat-1"
+                    class="rounded-3xl shadow-2xl hover:transform transition ease-in-out duration-500 hover:scale-110 cursor-pointer">
+            </a>
+        </div>
+        <div class="flex-1">
+            <h1 class="text-center text-2xl">意式浓缩 : 20￥</h1>
+            <a href="shopCar.html">
+                <img src="./img/pexels-karolina-grabowska-4195612.jpg" alt="cat-1"
+                    class="rounded-3xl shadow-2xl hover:transform transition ease-in-out duration-500 hover:scale-110 cursor-pointer">
+            </a>
+        </div>
+        <div class="flex-1">
+            <h1 class="text-center text-2xl">拿铁 : 25￥</h1>
+            <a href="shopCar.html">
+                <img src="./img/pexels-fariphotography-1254655.jpg" alt="cat-1"
+                    class="rounded-3xl shadow-2xl hover:transform transition ease-in-out duration-500 hover:scale-110 cursor-pointer">
+            </a>
+        </div>
+    </main>
+    <div class="text-center text-3xl my-10 underline underline-offset-4">
+        点击图片跳转购买
+    </div>
+
+    <div class="absolute mr-2 right-0 text-2xl bg-slate-500" id="miaosha">
+        <a href="shopCar.html">
+            <p class="line-through"><span id="lastTime"></span> 限时秒杀 摩卡只要 18￥</p>
+        </a>
+    </div>
+
+    <footer class="bg-yellow-800 absolute bottom-0 w-full text-white text-center">
+        <p class="hover:underline cursor-pointer">Copyright &copy; <span id="year">2024</span></p>
+        <p class="hover:underline cursor-pointer">All Rights Reserved</p>
+        <p class="hover:underline cursor-pointer">Phone Call:18688888888</p>
+        <p class="hover:underline cursor-pointer">Email:M123456789@gmail.com</p>
+    </footer>
+</body>
+<script>
+    
+    $(document).ready(()=>{
+        //60分钟倒计时
+        var countdownTime=60*60;
+        var lastTime=$('#lastTime');
+
+        function startTime(countdownTime,lastTime) { 
+            var timer=setInterval(()=>{
+                var min=parseInt(countdownTime/60,10);
+                var sec=parseInt(countdownTime%60,10);
+
+                lastTime.text(min+":"+sec);
+
+                countdownTime--;
+                if(countdownTime<0){
+                    clearInterval(timer);
+                    $('#miaosha').fadeOut();
+                }
+            },1000)
+        }
+
+        startTime(countdownTime,lastTime)
+    })
+</script>
+
+</html>

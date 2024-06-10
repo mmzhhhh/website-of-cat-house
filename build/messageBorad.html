@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猫咪信息</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/changeBanner.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+</head>
+
+<body class="min-h-screen bg-slate-50 font-noto">
+    <script src="js/click.js"></script>
+    <!-- Top bar & Top name -->
+    <header class="bg-yellow-800 text-white sticky top-0 z-10 ">
+        <section class="max-w-4xl mx-auto p-4 flex justify-between items-center">
+            <h1 class="text-4xl font-medium">
+                猫 咖 管 理 系 统
+            </h1>
+
+        </section>
+    </header>
+
+    <!-- selection bar -->
+    <nav class="flex justify-center items-center text-center text-4xl p-6">
+        <a href="systemPage.html" class="flex-1 duration-300 hover:text-white hover:bg-cyan-600 rounded-xl mr-2">首页</a>
+        <a href="coffeeInformation.html" class="flex-1 duration-300 hover:text-white hover:bg-cyan-600 rounded-xl mr-2">咖啡信息</a>
+        <a href="catInformation.html" class="flex-1 duration-300 hover:text-white hover:bg-cyan-600 rounded-xl mr-2">猫咪信息</a>
+        <a href="messageBorad.html" class="flex-1 duration-300 hover:text-white hover:bg-cyan-600 rounded-xl mr-2 bg-cyan-600">留言板</a>
+        <a href="shopCar.html" class="flex-1 duration-300 hover:text-white hover:bg-cyan-600 rounded-xl">购物车</a>
+    </nav>
+
+    <!-- 留言板 -->
+    <main class="max-w-4xl mx-auto">
+        <form action="" class="max-w-4xl" id="myForm">
+            <label for="message"></label>
+            <textarea name="message" id="message" placeholder="输入你的留言..."
+                class="resize-none w-full text-black text-2xl border border-solid border-slate-900 rounded-xl p-3" cols="30"
+                rows="4" required></textarea><br>
+            <button value="提交" class="text-2xl underline underline-offset-4">提交</button>
+        </form>
+        <hr class="mx-auto bg-black dark:bg-white w-1/2 my-10">
+        <h1 class="text-3xl">我们将会查看你的留言👍 </h1>
+        <span class="mt-1 text-xl whitespace-normal" id="typed">
+            
+        </span>
+    </main>
+
+
+    <footer class="bg-yellow-800 absolute bottom-0 w-full text-white text-center">
+        <p class="hover:underline cursor-pointer">Copyright &copy; <span id="year">2024</span></p>
+        <p class="hover:underline cursor-pointer">All Rights Reserved</p>
+        <p class="hover:underline cursor-pointer">Phone Call:18688888888</p>
+        <p class="hover:underline cursor-pointer">Email:M123456789@gmail.com</p>
+    </footer>
+</body>
+<script>
+    $(document).ready(function () {
+        // 初始化 Typed.js 实例
+        var typed = new Typed('#typed', {
+            strings: [],
+            typeSpeed: 100,
+        });
+
+        // 表单提交时更新 Typed.js 实例
+        $('#myForm').on('submit', function(event){
+            event.preventDefault();
+            var message = $('#message').val();
+
+            // 更新 Typed.js 实例
+            typed.destroy(); // 销毁旧实例
+            typed = new Typed('#typed', {
+                strings: ["你的留言："+message],
+                typeSpeed: 50,
+            });
+        });
+    });
+
+
+</script>
+
+</html>
